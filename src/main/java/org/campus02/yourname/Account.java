@@ -15,8 +15,8 @@ public class Account {
     }
 
     public boolean debit (double value) {
-        amount = amount - value;
-        if (amount < 0) {
+       double newAmount = amount - value;
+        if (newAmount < 0) {
             return false;
         } return true;
     }

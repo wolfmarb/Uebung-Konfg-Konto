@@ -39,13 +39,19 @@ class AccountTest {
 
     @Test
     void debit90() {
-        assertTrue(account1.debit(90));
+        assertTrue(account1.debit(90.00));
         assertEquals(10.00, account1.getAmount());
     }
     @Test
     void debit100() {
-        assertTrue(account1.debit(100));
+        assertTrue(account1.debit(100.00));
         assertEquals(0.00, account1.getAmount());
+    }
+
+    @Test
+    void debit120() {
+        assertFalse(account1.debit(120.00));
+        assertEquals(100.00, account1.getAmount());
     }
 
 }
