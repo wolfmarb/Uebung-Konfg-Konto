@@ -18,12 +18,13 @@ class AccountTest {
     @Test
     void konstruktor() {
         Assertions.assertEquals("Max Mustermann",account1.getOwner());
-        Assertions.assertEquals(100,account1.getAmount());
+        Assertions.assertEquals(100.00,account1.getAmount());
 
     }
 
     @Test
     void credit() {
+        assertEquals(220.00, account1.credit(120));
     }
 
     @Test
