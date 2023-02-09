@@ -26,8 +26,26 @@ class AccountTest {
     void credit() {
         assertEquals(220.00, account1.credit(120));
     }
+    @Test
+    void multicredit() {
+        account1.credit(110.00);
+        assertEquals(210.00, account1.getAmount());
+        account1.credit(120.00);
+        assertEquals(330.00,account1.getAmount());
+        account1.credit(130.00);
+        assertEquals(460.00,account1.getAmount());
+
+    }
 
     @Test
-    void debit() {
+    void debit90() {
+        assertTrue(account1.debit(90));
+        assertEquals(10.00, account1.getAmount());
     }
+    @Test
+    void debit100() {
+        assertTrue(account1.debit(100));
+        assertEquals(0.00, account1.getAmount());
+    }
+
 }
