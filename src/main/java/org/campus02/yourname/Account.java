@@ -15,10 +15,10 @@ public class Account {
     }
 
     public boolean debit (double value) {
-       double newAmount = amount - value;
-        if (newAmount < 0) {
-            return false;
-        } return true;
+        if (amount >= value ) {
+            amount = amount - value;
+            return true;
+        } return false;
     }
 
     public String getOwner() {
